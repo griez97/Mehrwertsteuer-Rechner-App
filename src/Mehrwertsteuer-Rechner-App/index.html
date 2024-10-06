@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Mehrwertsteuer-Rechner</h1>
+        <form>
+            <div>
+                <p>Was soll berechnet werden?</p>
+                
+                <input type="radio" id="nettoZuBrutto" name="calculationOf" value="nettoZuBrutto" checked> 
+                <!-- I don't understand why these inputs should have a "value" within them and what does this value do for the whole code -->
+                <label for="nettoZuBrutto">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+    
+                <input type="radio" id="bruttoZuNetto" name="calculationOf" value="bruttoZuNetto">
+                <label for="bruttoZuNetto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+            </div>
+
+            <div>
+                <p>Mehrwertsteuersatz</p>
+                
+                <input type="radio" id="19%" name="taxRate" value="19" checked>
+                <label for="19%">19%</label>
+    
+                <input type="radio" id="7%" name="taxRate" value="7">
+                <label for="7%">7%</label>
+            </div>
+
+            <div>
+                <label for="amount">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro*</label>
+                <input type="number" id="amount" required>
+                <input type="submit" value="Berechnen">
+            </div>
+
+            <div id="result" class="result">
+                <p>Ergebnis:</p>
+                <div>
+                    <p>Mehrwertsteuerbetrag: <span id="taxAmount">€</span></p>
+                </div>
+                <div>
+                    <p>Bruttobetrag (Endpreis): <span id="totalAmount">€</span></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="./main.ts"></script>
+</body>
+</html>
